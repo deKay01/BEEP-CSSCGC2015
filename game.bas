@@ -1,9 +1,10 @@
-Check C9FA277B
+Check 82C1B172
 Auto 1
 
 # Run-time Variables
 
-Var b: Num = 4
+Var b: Num = 26
+Var l: NumFOR = 5, 4, 1, 1110, 2
 
 # End Run-time Variables
 
@@ -23,16 +24,26 @@ Var b: Num = 4
  180 PRINT : PRINT " Press the letter 5 to start"
  200 REM Wait for button press
  210 PAUSE 0
- 220 IF INKEY$<>"5" THEN GO TO 20011
+ 220 IF INKEY$<>"5" THEN GO TO 220
  900 PAUSE 0
 1000 REM Lets set up the BEEPs
 1010 LET b=INT (RND*26)+1
-1020 PRINT b
-1030 IF INKEY$<>CHR$ (b+96) THEN GO TO 1030
+1020 REM PRINT b
+1030 REM IF INKEY$<>CHR$ (b+96) THEN GO TO 1030
+1050 CLS
+1060 PRINT "Let us begin!": PRINT b
 1100 REM Loop
 1110 FOR l=1 TO 4
 1120 PRINT "Press letter key number ";l
+1125 PAUSE 0
 1130 IF INKEY$<CHR$ (97) OR INKEY$>CHR$ (122) THEN GO TO 1130
 1140 IF  CODE (INKEY$)-96=b THEN BEEP 1,1: GO TO 1200
 1150 BEEP 1,0
+1200 NEXT l
+1300 REM You've had your chances!
+1310 PRINT : PRINT FLASH 1;"That's all folks!"
+1320 PRINT : PRINT "Time to guess. Which letter?"
+1350 INPUT k$
+1400 IF  CODE (k$)-96=b THEN PRINT "Correct!"
+1450 IF  CODE (k$)-96<>b THEN
 9000 PAUSE 0
