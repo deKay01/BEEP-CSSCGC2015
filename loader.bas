@@ -1,4 +1,5 @@
-Check AED1DFDA
+Check 333900E1
 Auto 1
   10 LOAD "" SCREEN$
-  20 LOAD "\#215"
+  15 POKE 23739,111
+  20 LOAD ""
