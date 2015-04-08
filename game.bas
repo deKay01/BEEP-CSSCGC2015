@@ -1,5 +1,12 @@
-Check BA04EFDA
+Check C9FA277B
 Auto 1
+
+# Run-time Variables
+
+Var b: Num = 4
+
+# End Run-time Variables
+
   10 REM BEEP
   20 REM (c)2015 deKay
   30 REM dekay.co.uk
@@ -16,10 +23,16 @@ Auto 1
  180 PRINT : PRINT " Press the letter 5 to start"
  200 REM Wait for button press
  210 PAUSE 0
- 220 IF INKEY$<>"5" THEN GO TO 200
+ 220 IF INKEY$<>"5" THEN GO TO 20011
  900 PAUSE 0
 1000 REM Lets set up the BEEPs
 1010 LET b=INT (RND*26)+1
 1020 PRINT b
-1030 GO TO 1010
+1030 IF INKEY$<>CHR$ (b+96) THEN GO TO 1030
+1100 REM Loop
+1110 FOR l=1 TO 4
+1120 PRINT "Press letter key number ";l
+1130 IF INKEY$<CHR$ (97) OR INKEY$>CHR$ (122) THEN GO TO 1130
+1140 IF  CODE (INKEY$)-96=b THEN BEEP 1,1: GO TO 1200
+1150 BEEP 1,0
 9000 PAUSE 0
