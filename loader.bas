@@ -1,0 +1,4 @@
+Check AED1DFDA
+Auto 1
+  10 LOAD "" SCREEN$
+  20 LOAD "\#215"
